@@ -1,0 +1,16 @@
+[
+  {
+    "id": "id12346541",
+    "razaoSocial": "com de eletrica",
+    "cnpj": "01-0002/0001-01",
+    "inscricaoEstadual": 123456789,
+    "tipo": "EXTERNA"
+  },
+  {
+    "id": "id333346541",
+    "razaoSocial": "com de mecanica",
+    "cnpj": "03-0002/0001-03",
+    "inscricaoEstadual": 33323456789,
+    "tipo": "INTERNA"
+  }
+]

@@ -1,21 +1,22 @@
-import { empresaModel } from '../model/empresaModel';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http'
+import { first, tap } from 'rxjs';
+
+import { EmpresaModel } from '../model/empresaModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmpresaService {
 
-  constructor(private httpCliene: HttpClient) { }
+  private readonly API = 'assets/empresa.json'
 
-  empresasPage(): empresaModel[]{
-    return [ {
-      id: 'id12346541',
-      razaoSocial: 'com de eletrica',
-      cnpj: '01-0002/0001-01',
-      inscricaoEstadual: 123456789,
-      tipo: 'EXTERNA',
-    }];
+  constructor(private httpClient: HttpClient) { }
+
+  empresasPage(){
+    return this.httpClient.get<EmpresaModel[]>(this.API).pipe(
+      first(),
+      tap(empresa => console.log(empresa))
+    );
   }
 }

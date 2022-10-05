@@ -1,4 +1,4 @@
-export interface empresaModel{
+export interface EmpresaModel{
 
   id: string;
   razaoSocial: string;

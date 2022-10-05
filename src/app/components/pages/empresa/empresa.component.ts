@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { empresaModel } from './../../../model/empresaModel';
+import { EmpresaModel } from './../../../model/empresaModel';
 import { EmpresaService } from './../../../services/empresa-service';
 
 @Component({
@@ -9,13 +10,15 @@ import { EmpresaService } from './../../../services/empresa-service';
   styleUrls: ['./empresa.component.scss'],
 })
 export class EmpresaComponent implements OnInit {
-  empresa: empresaModel[] = [];
+  empresa:  Observable<EmpresaModel[]>;
 
   displayedColumns = ['id', 'razao', 'cnpj', 'inscricao', 'tipo'];
 
-  constructor(private empresaService: EmpresaService) {}
+  constructor(private empresaService: EmpresaService) {
+    this.empresa =  this.empresaService.empresasPage();
+  }
 
   ngOnInit(): void {
-    this.empresa =  this.empresaService.empresasPage();
+
   }
 }
