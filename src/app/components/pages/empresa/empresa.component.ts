@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { empresaModel } from './../../../model/empresaModel';
+import { EmpresaService } from './../../../services/empresa-service';
 
 @Component({
   selector: 'app-empresa',
@@ -8,19 +9,13 @@ import { empresaModel } from './../../../model/empresaModel';
   styleUrls: ['./empresa.component.scss'],
 })
 export class EmpresaComponent implements OnInit {
-  empresa: empresaModel[] = [
-    {
-      id: 'id12346541',
-      razaoSocial: 'com de eletrica',
-      cnpj: '01-0002/0001-01',
-      inscricaoEstadual: 123456789,
-      tipo: 'EXTERNA',
-    },
-  ];
+  empresa: empresaModel[] = [];
 
   displayedColumns = ['id', 'razao', 'cnpj', 'inscricao', 'tipo'];
 
-  constructor() {}
+  constructor(private empresaService: EmpresaService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.empresa =  this.empresaService.empresasPage();
+  }
 }
