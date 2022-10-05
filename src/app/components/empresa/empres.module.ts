@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
+import { AppMaterialModule } from 'src/app/shared/app-material/app-material.module';
 
 import { EmpresaComponent } from '../pages/empresa/empresa.component';
 import { EmpresaRoutingModule } from './empresa-routing.module';
@@ -14,7 +14,7 @@ import { EmpresaRoutingModule } from './empresa-routing.module';
   imports: [
     CommonModule,
     EmpresaRoutingModule,
-    MatTableModule
+    AppMaterialModule
   ]
 })
 export class EmpresaModule { }
