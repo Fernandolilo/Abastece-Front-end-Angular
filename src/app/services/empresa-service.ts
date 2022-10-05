@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { first, tap } from 'rxjs';
+import { delay, first, tap } from 'rxjs';
 
 import { EmpresaModel } from '../model/empresaModel';
 
@@ -15,6 +15,7 @@ export class EmpresaService {
 
   empresasPage(){
     return this.httpClient.get<EmpresaModel[]>(this.API).pipe(
+      delay(5000),
       first(),
       tap(empresa => console.log(empresa))
     );

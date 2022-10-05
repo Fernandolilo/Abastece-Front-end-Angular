@@ -10,12 +10,12 @@ import { EmpresaService } from './../../../services/empresa-service';
   styleUrls: ['./empresa.component.scss'],
 })
 export class EmpresaComponent implements OnInit {
-  empresa:  Observable<EmpresaModel[]>;
+  empresa$:  Observable<EmpresaModel[]>;
 
   displayedColumns = ['id', 'razao', 'cnpj', 'inscricao', 'tipo'];
 
   constructor(private empresaService: EmpresaService) {
-    this.empresa =  this.empresaService.empresasPage();
+    this.empresa$ =  this.empresaService.empresasPage();
   }
 
   ngOnInit(): void {
