@@ -2,6 +2,7 @@
   {
     "id": "id12346541",
     "razaoSocial": "com de eletrica",
+    "dataInicialContrato": "21/09/2022",
     "cnpj": "01-0002/0001-01",
     "inscricaoEstadual": 123456789,
     "tipo": "EXTERNA"
@@ -9,6 +10,23 @@
   {
     "id": "id333346541",
     "razaoSocial": "com de mecanica",
+    "dataInicialContrato": "21/09/2022",
+    "cnpj": "03-0002/0001-03",
+    "inscricaoEstadual": 33323456789,
+    "tipo": "INTERNA"
+  },
+  {
+    "id": "id12346541",
+    "razaoSocial": "com de eletrica",
+    "dataInicialContrato": "21/09/2022",
+    "cnpj": "01-0002/0001-01",
+    "inscricaoEstadual": 123456789,
+    "tipo": "EXTERNA"
+  },
+  {
+    "id": "id333346541",
+    "razaoSocial": "com de mecanica",
+    "dataInicialContrato": "21/09/2022",
     "cnpj": "03-0002/0001-03",
     "inscricaoEstadual": 33323456789,
     "tipo": "INTERNA"

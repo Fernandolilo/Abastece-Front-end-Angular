@@ -1,0 +1,37 @@
+mat-card{
+  border-radius: 8px;
+  margin: 2em center;
+  max-width: 80%;
+  background-color: rgba(0, 0, 255, 0.137);
+}
+
+
+.toolbar{
+  margin-top: 150px;
+  background-color: #073D8E;
+  border-radius: 5px;
+  color: bisque;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.min-width{
+  width: 100%;
+  min-width: 150px;
+}
+
+.footer{
+  background-color: #1C3266;
+  color: white;
+  justify-content: center;
+  text-align: center;
+}
+
+.button{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+

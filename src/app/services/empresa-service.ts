@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay, first, tap } from 'rxjs';
+import { delay, first, Observable, tap } from 'rxjs';
 
 import { EmpresaModel } from '../model/empresaModel';
 
@@ -9,15 +9,22 @@ import { EmpresaModel } from '../model/empresaModel';
 })
 export class EmpresaService {
 
-  private readonly API = 'assets/empresa.json'
+  private readonly APIJson = 'assets/empresa.json'
+  private  API = 'http://localhost:7007/posto-server/empresas';
 
   constructor(private httpClient: HttpClient) { }
 
-  empresasPage(){
-    return this.httpClient.get<EmpresaModel[]>(this.API).pipe(
+  findAll(){
+    return this.httpClient.get<EmpresaModel[]>(this.APIJson).pipe(
       delay(5000),
-      first(),
-      tap(empresa => console.log(empresa))
+      first()
     );
   }
+
+  findPage(): Observable<EmpresaModel[]> {
+    return this.httpClient.get<EmpresaModel[]>(`${this.API}`).pipe(
+      first()
+    );
+}
+
 }
